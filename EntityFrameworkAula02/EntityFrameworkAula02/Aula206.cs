@@ -16,15 +16,25 @@ namespace EntityFrameworkAula02
             using (var context = new SchoolDBEntities())
             {
 
-                var students = from c in context.Students select c;
+                var alunos = from s in context.Students
+                             select s;
 
-                Console.WriteLine(students.Count());
+                var alunosRetornados = alunos.ToArray();
 
-                context.Students.Add(new Student() { StudentName = "Novo Estudante" });
+                foreach(var aluno in alunosRetornados)
+                {
+                    Console.WriteLine(aluno.StudentName);
+                }
 
+                context.Students.Add(new Student() { StudentName = "Joao 123" });
                 context.SaveChanges();
 
-                Console.WriteLine(students.Count());
+                Console.WriteLine("-");
+                
+                foreach (var aluno in alunosRetornados)
+                {
+                    Console.WriteLine(aluno.StudentName);
+                }
 
 
             }

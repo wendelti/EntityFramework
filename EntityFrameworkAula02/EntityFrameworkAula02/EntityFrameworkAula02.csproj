@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Aula203.cs" />
     <Compile Include="Aula2032.cs" />
+    <Compile Include="Aula204.cs" />
     <Compile Include="Aula208.cs" />
     <Compile Include="Aula207.cs" />
     <Compile Include="Aula205.cs" />

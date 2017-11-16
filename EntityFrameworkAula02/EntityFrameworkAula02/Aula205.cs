@@ -11,18 +11,33 @@ namespace EntityFrameworkAula02
 
         public static void ExecutarCodigo()
         {
-
-            int[] numeros = new int[7] { 0, 1, 2, 3, 4, 5, 6 };
-
-            var consultaNumeros =
-                from num in numeros
-                where (num % 2) == 0
-                select num;
             
-            foreach (int num in consultaNumeros)
+            using(var context = new SchoolDBEntities())
             {
-                Console.Write("{0,1} ", num);
+
+                var qtdEstudantes = context.Students.Count();
+                Console.WriteLine(qtdEstudantes);
+
+                Console.WriteLine("Informe o nome do aluno:");
+                var aluno = new Student();
+                aluno.StudentName = Console.ReadLine();
+
+                Console.WriteLine(context.Entry(aluno).State);
+
+                Console.WriteLine("Aluno adicionado ao contexto");
+                context.Students.Add(aluno);
+                Console.WriteLine(context.Entry(aluno).State);
+
+                context.SaveChanges();
+
+                Console.WriteLine("Alterações salvas");
+                Console.WriteLine(context.Entry(aluno).State);
+
+                qtdEstudantes = context.Students.Count();
+                Console.WriteLine(qtdEstudantes);
+
             }
+
 
 
         }

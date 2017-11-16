@@ -14,7 +14,7 @@ namespace EntityFrameworkAula02
             //Aula201.ExecutarCodigo();
             //Aula202.ExecutarCodigo();
             //Aula203.ExecutarCodigo();
-            Aula2032.ExecutarCodigo();
+            //Aula2032.ExecutarCodigo();
             //Aula204.ExecutarCodigo();
             //Aula205.ExecutarCodigo();
             //Aula206.ExecutarCodigo();
